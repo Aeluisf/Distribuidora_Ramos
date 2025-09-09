@@ -1,12 +1,14 @@
 /* --- IDENTIDADE VISUAL: DISTRIBUIDORA RAMOS - VERSÃO FINAL --- */
 :root {
     --brand-blue: #192A56;
+    --light-blue: #374A7A;
     --icon-active: #FFFFFF;
     --icon-inactive: rgba(255, 255, 255, 0.6);
     --light-gray: #f0f2f5;
     --dark-text: #2c3e50;    
     --white: #ffffff;
     --danger-color: #e74c3c;
+    --success-color: #27ae60; /* Verde do Botão WhatsApp */
     --promo-color: #1abc9c;
     --font-family: 'Poppins', sans-serif;
     --shadow: 0 4px 18px rgba(0,0,0,0.08);
@@ -310,7 +312,6 @@ body {
     margin-bottom: 10px;
 }
 
-
 /* --- ESTILOS DO CATÁLOGO --- */
 h2 { font-size: 1.5rem; color: var(--dark-text); margin-bottom: 20px; font-weight: 700; }
 .catalog-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
@@ -377,8 +378,31 @@ h2 { font-size: 1.5rem; color: var(--dark-text); margin-bottom: 20px; font-weigh
 .customer-info form { display: flex; flex-direction: column; gap: 12px; }
 .customer-info input, .customer-info textarea { width: 100%; padding: 12px; border: 1px solid #bdc3c7; border-radius: 8px; font-family: var(--font-family); font-size: 1rem; color: var(--dark-text); transition: border-color 0.2s ease; }
 .customer-info input:focus, .customer-info textarea:focus { border-color: var(--promo-color); outline: none; box-shadow: 0 0 0 2px rgba(26, 188, 156, 0.3); }
-.confirm-order-btn { background: var(--success-color); color: var(--white); border: none; padding: 15px; width: 100%; border-radius: var(--border-radius); font-size: 1.15rem; font-weight: 700; cursor: pointer; margin-top: 25px; display: flex; justify-content: center; align-items: center; gap: 10px; transition: background-color 0.2s ease, transform 0.1s ease; box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3); }
-.confirm-order-btn:hover { background: #229954; transform: translateY(-2px); }
+
+/* CORREÇÃO DEFINITIVA DO BOTÃO WHATSAPP */
+.confirm-order-btn {
+    background: var(--success-color);
+    color: var(--white);
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: var(--border-radius);
+    font-size: 1.15rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+.confirm-order-btn:hover { 
+    background: #229954; 
+    transform: translateY(-2px); 
+}
+
 .payment-method-section { margin-top: 15px; }
 .payment-method-title { font-size: 1rem; font-weight: 600; color: var(--dark-text); margin-bottom: 10px; }
 .payment-options { display: flex; flex-wrap: wrap; gap: 10px; }

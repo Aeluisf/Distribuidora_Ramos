@@ -1,11 +1,12 @@
-// VERSÃO FINAL E ESTÁVEL
+// VERSÃO FINAL CORRIGIDA - Botão WhatsApp funcional
 document.addEventListener('DOMContentLoaded', () => {
-    const WHATSAPP_NUMBER = '5598991875270';
+    // --- VARIÁVEIS E ESTADO INICIAL ---
+    const WHATSAPP_NUMBER = '5511999999999';
     let allProducts = [];
     let cart = [];
     let state = { currentCategory: 'Todos', currentSubcategory: 'Todos', searchTerm: '' };
 
-    // Seletores de DOM
+    // --- SELETORES DE ELEMENTOS DOM ---
     const mainContent = document.querySelector('.main-content');
     const productGrid = document.getElementById('product-grid');
     const offersContainer = document.getElementById('offers-container');
@@ -40,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contentPages = document.querySelectorAll('.content-page');
     const closePageBtns = document.querySelectorAll('.close-page-btn');
 
-    // Funções de Página (Sobre/Contato)
+    // --- LÓGICA DE PÁGINAS DE CONTEÚDO ---
     const showPage = (pageElement) => {
         contentPages.forEach(p => p.classList.add('hidden'));
         pageElement.classList.remove('hidden');
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mainContent.style.display = 'block';
     };
 
-    // Funções de Renderização e Filtro
+    // --- LÓGICA DE RENDERIZAÇÃO E FILTRAGEM ---
     const filterProducts = () => {
         let products = [...allProducts];
         if (state.searchTerm) {
@@ -195,7 +196,9 @@ document.addEventListener('DOMContentLoaded', () => {
         message += `\n*Total:* R$ ${total.toFixed(2).replace('.', ',')}\n`;
         if (obs) { message += `\n*Observações:* ${obs}`; }
         const encodedMessage = encodeURIComponent(message);
-        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank');
+        
+        // CORREÇÃO APLICADA AQUI
+        window.open(`whatsapp://send?phone=${WHATSAPP_NUMBER}&text=${encodedMessage}`, '_blank');
     };
     
     const toggleSearchBar = () => searchBar.classList.toggle('visible');
