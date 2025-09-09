@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Distribuidora Ramos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div id="header-menu-icon" class="header-icon">
+                <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
+            </div>
+            <div class="header-logo">
+                <img src="images/logo2.png" alt="Logo Distribuidora Ramos" class="logo-img">
+            </div>
+            <div class="header-actions">
+                <div id="header-search-icon" class="header-icon">
+                    <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+                </div>
+                <a href="#" id="header-cart-icon" class="header-icon cart-icon-container">
+                    <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+                    <span id="header-cart-badge" class="cart-count-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div id="search-bar" class="search-bar">
+        <div class="search-bar-content">
+            <input type="search" id="search-input" placeholder="Buscar pelo nome do produto...">
+            <button id="close-search-btn" class="close-search-btn">&times;</button>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <section class="offers-section">
+            <h2>🔥 Ofertas da Semana</h2>
+            <div id="offers-container" class="offers-grid"></div>
+        </section>
+
+        <section class="catalog-section">
+            <div class="catalog-header">
+                 <h2>Nosso Catálogo</h2>
+                 <p id="filter-status" class="filter-status"></p>
+            </div>
+            <div id="category-filters" class="category-filters"></div>
+            <div id="subcategory-filters" class="subcategory-filters"></div>
+            <div id="product-grid" class="product-grid"></div>
+        </section>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="#" id="home-button" class="nav-item active" aria-label="Início">
+            <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>
+        </a>
+        <a href="#" id="categories-button" class="nav-item" aria-label="Categorias">
+            <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
+        </a>
+        <a href="#" id="cart-button-bottom" class="nav-item cart-icon-container" aria-label="Carrinho">
+            <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+            <span id="bottom-cart-badge" class="cart-count-badge">0</span>
+        </a>
+    </nav>
+    
+    <div id="side-menu-overlay" class="side-menu-overlay"></div>
+    <div id="side-menu" class="side-menu">
+        <div class="side-menu-header">
+            <img src="images/minha_logo.png" alt="Logo Distribuidora Ramos" class="logo-img-side">
+            <button id="close-side-menu-btn" class="close-side-menu-btn">&times;</button>
+        </div>
+        <nav class="side-menu-nav">
+            <a href="#" class="side-menu-item active">Início</a>
+            <a href="#" class="side-menu-item">Meus Pedidos</a>
+            <a href="#" class="side-menu-item">Minha Conta</a>
+            <a href="#" class="side-menu-item">Fale Conosco</a>
+            <a href="#" class="side-menu-item">Sobre</a>
+        </nav>
+        <div class="side-menu-footer">
+            <p>&copy; 2023 Distribuidora Ramos</p>
+        </div>
+    </div>
+
+    <div id="cart-modal-overlay" class="cart-modal-overlay"></div>
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-modal-header"><h2>Seu Pedido</h2><button id="close-cart-btn" class="close-cart-btn">&times;</button></div>
+        <div id="cart-items-container"></div>
+        <div class="cart-modal-summary"><strong>Total:</strong><strong id="cart-total-price">R$ 0,00</strong></div>
+        <div class="customer-info"><h3>Complete seus dados</h3><form id="customer-form"><input type="text" id="customer-name" placeholder="Seu Nome Completo" required><input type="text" id="customer-address" placeholder="Rua, Número e Bairro" required><div class="payment-method-section"><h4 class="payment-method-title">Forma de Pagamento</h4><div class="payment-options"><div class="payment-option"><input type="radio" id="payment-pix" name="payment-method" value="Pix" required><label for="payment-pix">Pix</label></div><div class="payment-option"><input type="radio" id="payment-dinheiro" name="payment-method" value="Dinheiro"><label for="payment-dinheiro">Dinheiro</label></div><div class="payment-option"><input type="radio" id="payment-credito" name="payment-method" value="Cartão de Crédito"><label for="payment-credito">Crédito</label></div><div class="payment-option"><input type="radio" id="payment-debito" name="payment-method" value="Cartão de Débito"><label for="payment-debito">Débito</label></div></div></div><textarea id="customer-obs" placeholder="Observações (ex: troco, ponto de referência)"></textarea></form></div>
+        <button id="confirm-order-btn" class="confirm-order-btn">Confirmar Pedido no WhatsApp</button>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
