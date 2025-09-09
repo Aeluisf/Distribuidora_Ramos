@@ -8,7 +8,7 @@
     --dark-text: #2c3e50;    
     --white: #ffffff;
     --danger-color: #e74c3c;
-    --success-color: #27ae60; /* Verde do Botão WhatsApp */
+    --success-color: #27ae60;
     --promo-color: #1abc9c;
     --font-family: 'Poppins', sans-serif;
     --shadow: 0 4px 18px rgba(0,0,0,0.08);
@@ -26,6 +26,14 @@ body {
     font-family: var(--font-family);
     background-color: var(--light-gray);
     color: var(--dark-text);
+}
+
+/* CLASSE DEFINITIVA PARA TRAVAR A ROLAGEM */
+.body-no-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
 }
 
 .main-content {
@@ -355,60 +363,33 @@ h2 { font-size: 1.5rem; color: var(--dark-text); margin-bottom: 20px; font-weigh
 .add-to-cart-btn:hover { background-color: #16a085; transform: scale(1.05); }
 
 /* --- MODAL DO CARRINHO --- */
-.cart-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+.cart-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; opacity: 0; visibility: hidden; transition: opacity 0.3s ease; }
 .cart-modal-overlay.visible { opacity: 1; visibility: visible; }
 .cart-modal { position: fixed; bottom: 0; left: 0; width: 100%; max-height: 90vh; background: var(--white); z-index: 1001; border-top-left-radius: 20px; border-top-right-radius: 20px; padding: 25px; transform: translateY(100%); transition: transform 0.3s ease; display: flex; flex-direction: column; }
 .cart-modal.visible { transform: translateY(0); }
-.cart-modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
-.cart-modal-header h2 { margin-bottom: 0; font-size: 1.6rem; color: var(--dark-text); }
+.cart-modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; flex-shrink: 0; }
+.cart-modal-header h2 { margin: 0; font-size: 1.6rem; }
 .close-cart-btn { background: none; border: none; font-size: 2.2rem; cursor: pointer; color: #7f8c8d; }
-.cart-items-container { overflow-y: auto; flex-grow: 1; padding-right: 5px; }
+.cart-items-container { overflow-y: auto; -webkit-overflow-scrolling: touch; flex-grow: 1; }
 .cart-item { display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #ebf0f2; }
 .cart-item:last-child { border-bottom: none; }
-.cart-item-img { width: 70px; height: 70px; object-fit: contain; margin-right: 15px; border-radius: 8px; background-color: #f7fafc; }
+.cart-item-img { width: 70px; height: 70px; object-fit: contain; margin-right: 15px; }
 .cart-item-info { flex-grow: 1; }
-.cart-item-name { font-weight: 600; color: var(--dark-text); font-size: 1rem; }
-.cart-item-price { color: #7f8c8d; font-size: 0.9rem; }
+.cart-item-name { font-weight: 600; }
 .cart-item-controls { display: flex; align-items: center; gap: 10px; }
-.quantity-btn { background: #e0e6ed; border: none; width: 35px; height: 35px; border-radius: 50%; font-size: 1.3rem; cursor: pointer; color: var(--dark-text); transition: background-color 0.2s ease; }
-.quantity-btn:hover { background: #d3d9e0; }
-.cart-modal-summary { display: flex; justify-content: space-between; padding: 20px 0; border-top: 1px solid #dcdcdc; font-size: 1.3rem; font-weight: 700; color: var(--dark-text); margin-top: 15px; }
-.customer-info { padding-top: 20px; border-top: 1px solid #dcdcdc; margin-top: 20px; }
-.customer-info h3 { font-size: 1.2rem; color: var(--dark-text); margin-bottom: 15px; }
+.quantity-btn { background: #e0e6ed; border: none; width: 35px; height: 35px; border-radius: 50%; font-size: 1.3rem; cursor: pointer; }
+.cart-modal-summary { display: flex; justify-content: space-between; padding: 20px 0; border-top: 1px solid #dcdcdc; font-size: 1.3rem; font-weight: 700; margin-top: 15px; flex-shrink: 0; }
+.customer-info { padding-top: 20px; border-top: 1px solid #dcdcdc; margin-top: 20px; flex-shrink: 0; }
+.customer-info h3 { font-size: 1.2rem; margin-bottom: 15px; }
 .customer-info form { display: flex; flex-direction: column; gap: 12px; }
-.customer-info input, .customer-info textarea { width: 100%; padding: 12px; border: 1px solid #bdc3c7; border-radius: 8px; font-family: var(--font-family); font-size: 1rem; color: var(--dark-text); transition: border-color 0.2s ease; }
-.customer-info input:focus, .customer-info textarea:focus { border-color: var(--promo-color); outline: none; box-shadow: 0 0 0 2px rgba(26, 188, 156, 0.3); }
-
-/* CORREÇÃO DEFINITIVA DO BOTÃO WHATSAPP */
-.confirm-order-btn {
-    background: var(--success-color);
-    color: var(--white);
-    border: none;
-    padding: 15px;
-    width: 100%;
-    border-radius: var(--border-radius);
-    font-size: 1.15rem;
-    font-weight: 700;
-    cursor: pointer;
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
-}
-.confirm-order-btn:hover { 
-    background: #229954; 
-    transform: translateY(-2px); 
-}
-
+.customer-info input, .customer-info textarea { width: 100%; padding: 12px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 1rem; }
+.confirm-order-btn { background: var(--success-color); color: var(--white); border: none; padding: 15px; width: 100%; border-radius: var(--border-radius); font-size: 1.15rem; font-weight: 700; cursor: pointer; margin-top: 25px; flex-shrink: 0; }
 .payment-method-section { margin-top: 15px; }
-.payment-method-title { font-size: 1rem; font-weight: 600; color: var(--dark-text); margin-bottom: 10px; }
+.payment-method-title { font-weight: 600; margin-bottom: 10px; }
 .payment-options { display: flex; flex-wrap: wrap; gap: 10px; }
-.payment-option input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
-.payment-option label { display: inline-block; padding: 10px 15px; border: 1px solid #bdc3c7; border-radius: 25px; cursor: pointer; font-size: 0.9rem; font-weight: 500; color: var(--dark-text); background-color: var(--white); transition: all 0.2s ease-in-out; }
-.payment-option input[type="radio"]:checked + label { background-color: var(--promo-color); border-color: var(--promo-color); color: var(--white); font-weight: 700; box-shadow: 0 4px 10px rgba(26, 188, 156, 0.3); }
+.payment-option input[type="radio"] { position: absolute; opacity: 0; }
+.payment-option label { padding: 10px 15px; border: 1px solid #bdc3c7; border-radius: 25px; cursor: pointer; }
+.payment-option input[type="radio"]:checked + label { background-color: var(--dark-text); border-color: var(--dark-text); color: var(--white); }
 
 @media (min-width: 768px) { 
     .main-header, .bottom-nav { left: 50%; transform: translateX(-50%); max-width: 450px; } 

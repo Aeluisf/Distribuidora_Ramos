@@ -17,7 +17,7 @@
                 <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
             </div>
             <div class="header-logo">
-                <img src="images/logo2.png" alt="Logo Distribuidora Ramos" class="logo-img">
+                <img src="images/minha_logo.png" alt="Logo Distribuidora Ramos" class="logo-img">
             </div>
             <div class="header-actions">
                 <div id="header-search-icon" class="header-icon">
@@ -57,35 +57,21 @@
     
     <section id="about-page" class="content-page hidden">
         <div class="content-page-header">
-            <button class="close-page-btn" data-page="about-page">&times;</button>
+            <button class="close-page-btn">&times;</button>
             <h2>Sobre a Distribuidora Ramos</h2>
         </div>
         <div class="content-page-body">
             <p>A Distribuidora Ramos nasceu em 2023 com a missão de levar as melhores bebidas até você, com rapidez, variedade e o melhor preço da região.</p>
-            <p>Somos uma empresa familiar que preza pela qualidade do atendimento e pela satisfação de nossos clientes. Conte conosco para abastecer sua festa, seu evento ou o seu negócio.</p>
-            <h3>Nossos Valores</h3>
-            <ul>
-                <li>Agilidade na entrega</li>
-                <li>Variedade de produtos</li>
-                <li>Preço justo</li>
-                <li>Atendimento de primeira</li>
-            </ul>
         </div>
     </section>
 
     <section id="contact-page" class="content-page hidden">
         <div class="content-page-header">
-            <button class="close-page-btn" data-page="contact-page">&times;</button>
+            <button class="close-page-btn">&times;</button>
             <h2>Fale Conosco</h2>
         </div>
         <div class="content-page-body">
-            <p>Tem alguma dúvida, sugestão ou reclamação? Entre em contato conosco! Estamos sempre prontos para te atender.</p>
-            <div class="contact-info">
-                <p><strong>WhatsApp:</strong> (XX) XXXXX-XXXX</p>
-                <p><strong>E-mail:</strong> contato@distribuidoramos.com.br</p>
-                <p><strong>Endereço:</strong> Rua das Bebidas, 123, Bairro do Malte, Cidade-UF</p>
-                <p><strong>Horário de Funcionamento:</strong> Segunda a Sábado, das 09:00 às 20:00.</p>
-            </div>
+            <p>Entre em contato conosco através dos nossos canais de atendimento.</p>
         </div>
     </section>
 
@@ -105,7 +91,7 @@
     <div id="side-menu-overlay" class="side-menu-overlay"></div>
     <div id="side-menu" class="side-menu">
         <div class="side-menu-header">
-            <img src="images/logo2.png" alt="Logo Distribuidora Ramos" class="logo-img-side">
+            <img src="images/minha_logo.png" alt="Logo Distribuidora Ramos" class="logo-img-side">
             <button id="close-side-menu-btn" class="close-side-menu-btn">&times;</button>
         </div>
         <nav class="side-menu-nav">
@@ -121,7 +107,7 @@
     <div id="cart-modal-overlay" class="cart-modal-overlay"></div>
     <div id="cart-modal" class="cart-modal">
         <div class="cart-modal-header"><h2>Seu Pedido</h2><button id="close-cart-btn" class="close-cart-btn">&times;</button></div>
-        <div id="cart-items-container"></div>
+        <div id="cart-items-container" class="cart-items-container"></div>
         <div class="cart-modal-summary"><strong>Total:</strong><strong id="cart-total-price">R$ 0,00</strong></div>
         <div class="customer-info"><h3>Complete seus dados</h3><form id="customer-form"><input type="text" id="customer-name" placeholder="Seu Nome Completo" required><input type="text" id="customer-address" placeholder="Rua, Número e Bairro" required><div class="payment-method-section"><h4 class="payment-method-title">Forma de Pagamento</h4><div class="payment-options"><div class="payment-option"><input type="radio" id="payment-pix" name="payment-method" value="Pix" required><label for="payment-pix">Pix</label></div><div class="payment-option"><input type="radio" id="payment-dinheiro" name="payment-method" value="Dinheiro"><label for="payment-dinheiro">Dinheiro</label></div><div class="payment-option"><input type="radio" id="payment-credito" name="payment-method" value="Cartão de Crédito"><label for="payment-credito">Crédito</label></div><div class="payment-option"><input type="radio" id="payment-debito" name="payment-method" value="Cartão de Débito"><label for="payment-debito">Débito</label></div></div></div><textarea id="customer-obs" placeholder="Observações (ex: troco, ponto de referência)"></textarea></form></div>
         <button id="confirm-order-btn" class="confirm-order-btn">Confirmar Pedido no WhatsApp</button>
