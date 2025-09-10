@@ -17,7 +17,7 @@
                 <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
             </div>
             <div class="header-logo">
-                <img src="images/minha_logo.png" alt="Logo Distribuidora Ramos" class="logo-img">
+                <img src="images/logo2.png" alt="Logo Distribuidora Ramos" class="logo-img">
             </div>
             <div class="header-actions">
                 <div id="header-search-icon" class="header-icon">
@@ -91,7 +91,7 @@
     <div id="side-menu-overlay" class="side-menu-overlay"></div>
     <div id="side-menu" class="side-menu">
         <div class="side-menu-header">
-            <img src="images/minha_logo.png" alt="Logo Distribuidora Ramos" class="logo-img-side">
+            <img src="images/logo2.png" alt="Logo Distribuidora Ramos" class="logo-img-side">
             <button id="close-side-menu-btn" class="close-side-menu-btn">&times;</button>
         </div>
         <nav class="side-menu-nav">
@@ -104,14 +104,54 @@
         </div>
     </div>
 
-    <div id="cart-modal-overlay" class="cart-modal-overlay"></div>
-    <div id="cart-modal" class="cart-modal">
-        <div class="cart-modal-header"><h2>Seu Pedido</h2><button id="close-cart-btn" class="close-cart-btn">&times;</button></div>
-        <div id="cart-items-container" class="cart-items-container"></div>
-        <div class="cart-modal-summary"><strong>Total:</strong><strong id="cart-total-price">R$ 0,00</strong></div>
-        <div class="customer-info"><h3>Complete seus dados</h3><form id="customer-form"><input type="text" id="customer-name" placeholder="Seu Nome Completo" required><input type="text" id="customer-address" placeholder="Rua, Número e Bairro" required><div class="payment-method-section"><h4 class="payment-method-title">Forma de Pagamento</h4><div class="payment-options"><div class="payment-option"><input type="radio" id="payment-pix" name="payment-method" value="Pix" required><label for="payment-pix">Pix</label></div><div class="payment-option"><input type="radio" id="payment-dinheiro" name="payment-method" value="Dinheiro"><label for="payment-dinheiro">Dinheiro</label></div><div class="payment-option"><input type="radio" id="payment-credito" name="payment-method" value="Cartão de Crédito"><label for="payment-credito">Crédito</label></div><div class="payment-option"><input type="radio" id="payment-debito" name="payment-method" value="Cartão de Débito"><label for="payment-debito">Débito</label></div></div></div><textarea id="customer-obs" placeholder="Observações (ex: troco, ponto de referência)"></textarea></form></div>
-        <button id="confirm-order-btn" class="confirm-order-btn">Confirmar Pedido no WhatsApp</button>
-    </div>
+    <section id="cart-page" class="cart-page">
+        
+        <div id="cart-items-view" class="cart-view-container active">
+            <div class="cart-page-header">
+                <button id="close-cart-page-btn" class="back-btn">&larr;</button>
+                <h2>Seu Pedido</h2>
+            </div>
+            <div id="cart-items-container" class="cart-page-body">
+                </div>
+            <div class="cart-page-footer">
+                <div class="cart-modal-summary">
+                    <strong>Total:</strong>
+                    <strong id="cart-total-price">R$ 0,00</strong>
+                </div>
+                <button id="go-to-checkout-btn" class="confirm-order-btn">Continuar</button>
+            </div>
+        </div>
+
+        <div id="cart-checkout-view" class="cart-view-container">
+            <div class="cart-page-header">
+                <button id="back-to-items-btn" class="back-btn">&larr;</button>
+                <h2>Complete os Dados</h2>
+            </div>
+            <div class="checkout-body">
+                <div class="customer-info">
+                    <h3>Dados para Entrega</h3>
+                    <form id="customer-form">
+                        <input type="text" id="customer-name" placeholder="Seu Nome Completo" required>
+                        <input type="text" id="customer-address" placeholder="Rua, Número e Bairro" required>
+                        <div class="payment-method-section">
+                            <h4 class="payment-method-title">Forma de Pagamento</h4>
+                            <div class="payment-options">
+                                <div class="payment-option"><input type="radio" id="payment-pix" name="payment-method" value="Pix" required><label for="payment-pix">Pix</label></div>
+                                <div class="payment-option"><input type="radio" id="payment-dinheiro" name="payment-method" value="Dinheiro"><label for="payment-dinheiro">Dinheiro</label></div>
+                                <div class="payment-option"><input type="radio" id="payment-credito" name="payment-method" value="Cartão de Crédito"><label for="payment-credito">Crédito</label></div>
+                                <div class="payment-option"><input type="radio" id="payment-debito" name="payment-method" value="Cartão de Débito"><label for="payment-debito">Débito</label></div>
+                            </div>
+                        </div>
+                        <textarea id="customer-obs" placeholder="Observações (ex: troco, ponto de referência)"></textarea>
+                    </form>
+                </div>
+            </div>
+            <div class="cart-page-footer">
+                <button id="confirm-order-btn" class="confirm-order-btn">Enviar Pedido para WhatsApp</button>
+            </div>
+        </div>
+
+    </section>
 
     <script src="js/main.js"></script>
 </body>
